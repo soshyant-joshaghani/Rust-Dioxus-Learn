@@ -1,0 +1,6 @@
+[package]
+name = "rdx-00-create-rust-project"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
