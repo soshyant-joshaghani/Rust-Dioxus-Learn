@@ -25,6 +25,7 @@ mod modules;
 mod routes;
 
 fn main() {
+    std::panic::set_hook(Box::new(|info| { let _ = std::fs::write(std::env::temp_dir().join("foxg-panic.log"), format!("{info}")); }));
     // `app::App` is the path to the component: module `app`, item `App`.
     dioxus::launch(app::App);
 }
