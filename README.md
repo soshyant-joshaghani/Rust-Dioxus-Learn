@@ -8,8 +8,9 @@ Pages: **Home** (`/`, with your saved progress), **Games** (`/games`: Number Gue
 
 ```bash
 dx serve                          # web, http://localhost:8080
-dx serve --platform desktop       # native window
-dx serve --platform android       # needs the Android setup from lessons/rdx-01
+dx serve --[platform]             # platform
+dx serve --desktop                # native window
+dx serve --android                # needs the Android setup from lessons/rdx-01
 cargo test                        # 63 unit tests, no browser needed
 cargo run --example exp_ownership # experiments live in examples/
 ```
