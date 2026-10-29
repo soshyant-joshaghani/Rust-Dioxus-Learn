@@ -1,0 +1,86 @@
+/* FoxG Game Hub - one plain CSS file, no framework.
+   Colours live in variables (custom properties) so a theme is just a different set of values. */
+
+:root {
+    --bg: #0f1116;
+    --panel: #181b23;
+    --border: #2a2f3b;
+    --text: #e8eaf0;
+    --muted: #9aa3b5;
+    --accent: #ff8a3d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    line-height: 1.5;
+}
+
+/* ---------- layout ---------- */
+.page { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+.header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 0; border-bottom: 1px solid var(--border);
+}
+.brand { font-weight: 700; font-size: 1.25rem; color: var(--accent); }
+
+.footer { margin: 48px 0 24px; color: var(--muted); font-size: 0.875rem; text-align: center; }
+
+/* ---------- hero ---------- */
+.hero { padding: 48px 0 24px; text-align: center; }
+.hero h1 { font-size: 2.5rem; margin: 0 0 8px; }
+.hero p { color: var(--muted); margin: 0; }
+
+/* ---------- game cards ---------- */
+.grid {
+    display: grid; gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    margin-top: 24px;
+}
+.card {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 12px; padding: 16px;
+}
+.card h3 { margin: 0 0 4px; }
+.card p { margin: 0 0 12px; color: var(--muted); }
+.tag {
+    display: inline-block; padding: 2px 8px; border-radius: 999px;
+    background: #2a2118; color: var(--accent); font-size: 0.75rem;
+}
+
+/* ---------- navigation (lesson 04) ---------- */
+.header { gap: 12px; }
+.nav { display: flex; gap: 4px; margin-left: auto; }
+.nav-link {
+    color: var(--muted); text-decoration: none;
+    padding: 6px 12px; border-radius: 8px;
+}
+.nav-link:hover { color: var(--text); }
+.nav-link.active { color: var(--text); background: var(--panel); }
+
+.title { margin: 24px 0 0; }
+.btn {
+    display: inline-block; margin-top: 16px; padding: 8px 18px;
+    background: var(--accent); color: #1a1208; font-weight: 600;
+    border: 0; border-radius: 8px; text-decoration: none; cursor: pointer;
+}
+.btn:hover { filter: brightness(1.1); }
+
+/* ---------- games (lesson 05) ---------- */
+.muted { color: var(--muted); font-size: 0.875rem; text-decoration: none; }
+.card-action { margin-top: 12px; }
+.card-action .btn { margin-top: 0; }
+.message { font-size: 1.1rem; margin: 0 0 12px; }
+.message.win { color: #5fd38d; font-weight: 600; }
+.row { display: flex; gap: 8px; margin-bottom: 12px; }
+input[type="text"] {
+    flex: 1; padding: 8px 12px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--bg); color: var(--text);
+    font-size: 1rem;
+}
+.btn.secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
